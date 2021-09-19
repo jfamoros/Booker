@@ -1,2 +1,8 @@
-debug/
-target/
+
+.vs/*
+Booker/obj/*
+Booker/bin/*
+*.json
+/Booker/LavaLink/*
+/Booker/Properties/*
+Booker/Booker.csproj.user
