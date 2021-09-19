@@ -24,6 +24,10 @@ namespace PartyBot.Modules
             _client = client;
         }
 
+        [Command("Skip")]
+        public async Task Skip()
+            => await ReplyAsync(embed: await AudioService.SkipTrackAsync(Context.Guild));
+
         [Command("Join")]
         public async Task JoinAndPlay()
             => await ReplyAsync(embed: await AudioService.JoinAsync(Context.Guild, Context.User as IVoiceState, Context.Channel as ITextChannel));
