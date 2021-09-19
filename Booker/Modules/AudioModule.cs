@@ -24,6 +24,10 @@ namespace PartyBot.Modules
             _client = client;
         }
 
+        [Command("List")]
+        public async Task List()
+            => await ReplyAsync(embed: await AudioService.ListAsync(Context.Guild));
+
         [Command("Skip")]
         public async Task Skip()
             => await ReplyAsync(embed: await AudioService.SkipTrackAsync(Context.Guild));
@@ -59,9 +63,9 @@ namespace PartyBot.Modules
 
                 await AudioService.PlayAsync(Context.User as SocketGuildUser , Context.Guild, test2);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }
